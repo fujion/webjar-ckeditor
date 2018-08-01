@@ -1,0 +1,49 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>org.fujion.webjars</groupId>
+		<artifactId>fujion-webjars</artifactId>
+		<version>2.1.0</version>
+	</parent>
+
+	<name>CKEditor Web Jars</name>
+	<artifactId>fujion-ckeditor</artifactId>
+	<version>4.10.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<description>Web jar packaging of CKEditor packages.</description>
+
+	<properties>
+		<src.url>https://download.cksource.com/CKEditor/CKEditor/CKEditor%20${src.version}/ckeditor_${src.version}_${ckeditor.package}.zip</src.url>
+	</properties>
+	
+	<modules>
+		<module>fujion-ckeditor-basic</module>
+		<module>fujion-ckeditor-standard</module>
+		<module>fujion-ckeditor-full</module>
+	</modules>
+
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<artifactId>maven-antrun-plugin</artifactId>
+					<executions>
+						<execution>
+							<id>precompile</id>
+							<configuration>
+								<target>
+									<get src="${src.url}" dest="${src.zipdir}/src.zip"/>
+									<unzip src="${src.zipdir}/src.zip" dest="${src.tmpdir}" />
+									<move todir="${webjar.target}">
+										<fileset dir="${src.tmpdir}/ckeditor" includes="**/*.*" excludes="samples/**"/>
+									</move>
+								</target>
+							</configuration>
+						</execution>
+					</executions>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+</project>
