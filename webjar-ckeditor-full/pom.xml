@@ -4,7 +4,7 @@
 	<parent>
 		<groupId>org.fujion.webjars</groupId>
 		<artifactId>webjar-ckeditor</artifactId>
-		<version>4.10.0</version>
+		<version>4.10.0-1-SNAPSHOT</version>
 	</parent>
 
 	<name>CKEditor (Full)</name>
