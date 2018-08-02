@@ -18,9 +18,9 @@
 	</properties>
 	
 	<modules>
-		<module>fujion-ckeditor-basic</module>
-		<module>fujion-ckeditor-standard</module>
-		<module>fujion-ckeditor-full</module>
+		<module>webjar-ckeditor-basic</module>
+		<module>webjar-ckeditor-standard</module>
+		<module>webjar-ckeditor-full</module>
 	</modules>
 
 	<build>
