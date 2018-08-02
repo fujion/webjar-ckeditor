@@ -8,7 +8,7 @@
 	</parent>
 
 	<name>CKEditor Web Jars</name>
-	<artifactId>fujion-ckeditor</artifactId>
+	<artifactId>webjar-ckeditor</artifactId>
 	<version>4.10.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<description>Web jar packaging of CKEditor packages.</description>

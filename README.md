@@ -1,2 +1,3 @@
 # fujion-ckeditor
-Web jar for https://download.cksource.com/CKEditor.
+Web jars for CKEditor.
+https://download.cksource.com/CKEditor

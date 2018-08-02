@@ -8,7 +8,7 @@
 	</parent>
 
 	<name>CKEditor (Standard)</name>
-	<artifactId>fujion-ckeditor-standard</artifactId>
+	<artifactId>webjar-ckeditor-standard</artifactId>
 	<description>CKEditor rich text editor, standard version.</description>
 	
 	<properties>
