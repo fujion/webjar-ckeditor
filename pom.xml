@@ -9,7 +9,7 @@
 
 	<name>CKEditor Web Jars</name>
 	<artifactId>webjar-ckeditor</artifactId>
-	<version>4.10.0-SNAPSHOT</version>
+	<version>4.10.0</version>
 	<packaging>pom</packaging>
 	<description>Web jar packaging of CKEditor packages.</description>
 
@@ -33,10 +33,10 @@
 							<id>precompile</id>
 							<configuration>
 								<target>
-									<get src="${src.url}" dest="${src.zipdir}/src.zip"/>
+									<get src="${src.url}" dest="${src.zipdir}/src.zip" />
 									<unzip src="${src.zipdir}/src.zip" dest="${src.tmpdir}" />
 									<move todir="${webjar.target}">
-										<fileset dir="${src.tmpdir}/ckeditor" includes="**/*.*" excludes="samples/**"/>
+										<fileset dir="${src.tmpdir}/ckeditor" includes="**/*.*" excludes="samples/**" />
 									</move>
 								</target>
 							</configuration>
@@ -46,4 +46,8 @@
 			</plugins>
 		</pluginManagement>
 	</build>
+
+  <scm>
+    <tag>4.10.0</tag>
+  </scm>
 </project>
