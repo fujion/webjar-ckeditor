@@ -9,7 +9,7 @@
 
 	<name>CKEditor Web Jars</name>
 	<artifactId>webjar-ckeditor</artifactId>
-	<version>4.11.3-SNAPSHOT</version>
+	<version>4.11.3</version>
 	<packaging>pom</packaging>
 	<description>Web jar packaging of CKEditor packages.</description>
 
@@ -46,4 +46,8 @@
 			</plugins>
 		</pluginManagement>
 	</build>
+
+  <scm>
+    <tag>4.11.3</tag>
+  </scm>
 </project>
