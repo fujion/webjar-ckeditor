@@ -14,6 +14,7 @@
 	<description>Web jar packaging of CKEditor packages.</description>
 
 	<properties>
+		<!--suppress UnresolvedMavenProperty -->
 		<src.url>https://download.cksource.com/CKEditor/CKEditor/CKEditor%20${src.version}/ckeditor_${src.version}_${ckeditor.package}.zip</src.url>
 	</properties>
 	
