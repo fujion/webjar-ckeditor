@@ -13,13 +13,6 @@
 	
 	<properties>
 		<ckeditor.package>full</ckeditor.package>
-		<systemjs>
-			{
-				"paths": {
-					"ckeditor-full": "ckeditor.js"
-				}
-			}			
-		</systemjs>
 	</properties>
 	
 	<build>

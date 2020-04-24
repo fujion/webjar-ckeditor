@@ -13,13 +13,6 @@
 	
 	<properties>
 		<ckeditor.package>standard</ckeditor.package>
-		<systemjs>
-			{
-				"paths": {
-					"ckeditor-standard": "ckeditor.js"
-				}
-			}			
-		</systemjs>
 	</properties>
 	
 	<build>

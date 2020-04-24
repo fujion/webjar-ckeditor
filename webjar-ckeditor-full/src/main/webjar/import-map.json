@@ -1,0 +1,5 @@
+{
+  "imports": {
+    "ckeditor-full": "ckeditor.js"
+  }
+}
