@@ -36,9 +36,9 @@
 								<target>
 									<get src="${src.url}" dest="${src.zipdir}/src.zip" />
 									<unzip src="${src.zipdir}/src.zip" dest="${src.tmpdir}" />
-									<move todir="${webjar.target}">
+									<copy todir="${webjar.target}">
 										<fileset dir="${src.tmpdir}/ckeditor" includes="**/*.*" excludes="samples/**" />
-									</move>
+									</copy>
 								</target>
 							</configuration>
 						</execution>
