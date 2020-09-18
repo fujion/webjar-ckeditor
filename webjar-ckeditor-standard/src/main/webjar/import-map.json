@@ -1,5 +1,5 @@
 {
-  "paths": {
+  "imports": {
     "ckeditor-standard": "ckeditor.js"
   }
 }
