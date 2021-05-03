@@ -9,7 +9,7 @@
 
 	<name>CKEditor Web Jars</name>
 	<artifactId>webjar-ckeditor</artifactId>
-	<version>4.16.0</version>
+	<version>4.16.0-10</version>
 	<packaging>pom</packaging>
 	<description>Web jar packaging of CKEditor packages.</description>
 
@@ -37,7 +37,10 @@
 									<get src="${src.url}" dest="${src.zipdir}/src.zip" />
 									<unzip src="${src.zipdir}/src.zip" dest="${src.tmpdir}" />
 									<copy todir="${webjar.target}">
-										<fileset dir="${src.tmpdir}/ckeditor" includes="**/*.*" excludes="samples/**" />
+										<fileset dir="${src.tmpdir}/ckeditor" includes="*.md" />
+									</copy>
+									<copy todir="${webjar.target}/dist">
+										<fileset dir="${src.tmpdir}/ckeditor" includes="**/*.*" excludes="samples/**,*.md" />
 									</copy>
 								</target>
 							</configuration>
