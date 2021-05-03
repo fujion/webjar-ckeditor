@@ -1,6 +1,0 @@
-{
-  "imports": {
-    "ckeditor-basic": "dist/ckeditor.js",
-    "ckeditor-basic/": "dist/"
-  }
-}

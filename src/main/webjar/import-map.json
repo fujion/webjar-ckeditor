@@ -1,0 +1,10 @@
+{
+  "imports": {
+    "ckeditor-basic": "dist/basic/ckeditor.js",
+    "ckeditor-basic/": "dist/basic/",
+    "ckeditor-standard": "dist/standard/ckeditor.js",
+    "ckeditor-standard/": "dist/standard/",
+    "ckeditor-full": "dist/full/ckeditor.js",
+    "ckeditor-full/": "dist/full/"
+  }
+}

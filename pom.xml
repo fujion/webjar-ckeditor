@@ -10,44 +10,44 @@
 	<name>CKEditor Web Jars</name>
 	<artifactId>webjar-ckeditor</artifactId>
 	<version>4.16.0-10</version>
-	<packaging>pom</packaging>
 	<description>Web jar packaging of CKEditor packages.</description>
 
 	<properties>
-		<!--suppress UnresolvedMavenProperty -->
-		<src.url>https://download.cksource.com/CKEditor/CKEditor/CKEditor%20${src.version}/ckeditor_${src.version}_${ckeditor.package}.zip</src.url>
+		<src.url>https://download.cksource.com/CKEditor/CKEditor/CKEditor%20${src.version}/ckeditor_${src.version}_</src.url>
 	</properties>
 	
-	<modules>
-		<module>webjar-ckeditor-basic</module>
-		<module>webjar-ckeditor-standard</module>
-		<module>webjar-ckeditor-full</module>
-	</modules>
-
 	<build>
-		<pluginManagement>
-			<plugins>
-				<plugin>
-					<artifactId>maven-antrun-plugin</artifactId>
-					<executions>
-						<execution>
-							<id>precompile</id>
-							<configuration>
-								<target>
-									<get src="${src.url}" dest="${src.zipdir}/src.zip" />
-									<unzip src="${src.zipdir}/src.zip" dest="${src.tmpdir}" />
-									<copy todir="${webjar.target}">
-										<fileset dir="${src.tmpdir}/ckeditor" includes="*.md" />
-									</copy>
-									<copy todir="${webjar.target}/dist">
-										<fileset dir="${src.tmpdir}/ckeditor" includes="**/*.*" excludes="samples/**,*.md" />
-									</copy>
-								</target>
-							</configuration>
-						</execution>
-					</executions>
-				</plugin>
-			</plugins>
-		</pluginManagement>
+		<plugins>
+			<plugin>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>precompile</id>
+						<configuration>
+							<target>
+								<get src="${src.url}full.zip" dest="${src.zipdir}/full.zip" />
+								<unzip src="${src.zipdir}/full.zip" dest="${src.tmpdir}/full" />
+								<get src="${src.url}basic.zip" dest="${src.zipdir}/basic.zip" />
+								<unzip src="${src.zipdir}/basic.zip" dest="${src.tmpdir}/basic" />
+								<get src="${src.url}standard.zip" dest="${src.zipdir}/standard.zip" />
+								<unzip src="${src.zipdir}/standard.zip" dest="${src.tmpdir}/standard" />
+								<copy todir="${webjar.target}">
+									<fileset dir="${src.tmpdir}/full/ckeditor" includes="*.md" />
+								</copy>
+								<copy todir="${webjar.target}/dist/full">
+									<fileset dir="${src.tmpdir}/full/ckeditor" includes="**/*.*" excludes="samples/**,*.md" />
+								</copy>
+								<copy todir="${webjar.target}/dist/basic">
+									<fileset dir="${src.tmpdir}/basic/ckeditor" includes="**/*.*" excludes="samples/**,*.md" />
+								</copy>
+								<copy todir="${webjar.target}/dist/standard">
+									<fileset dir="${src.tmpdir}/standard/ckeditor" includes="**/*.*" excludes="samples/**,*.md" />
+								</copy>
+							</target>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
 	</build>
 </project>
