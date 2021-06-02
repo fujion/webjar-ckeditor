@@ -9,7 +9,7 @@
 
 	<name>CKEditor Web Jars</name>
 	<artifactId>webjar-ckeditor</artifactId>
-	<version>4.16.0-10</version>
+	<version>4.16.1</version>
 	<description>Web jar packaging of CKEditor packages.</description>
 
 	<properties>
