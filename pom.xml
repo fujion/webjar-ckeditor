@@ -4,13 +4,15 @@
 	<parent>
 		<groupId>org.fujion.webjars</groupId>
 		<artifactId>fujion-webjars</artifactId>
-		<version>3.0.0</version>
+		<version>3.2.0-SNAPSHOT</version>
 	</parent>
 
 	<name>CKEditor Web Jars</name>
 	<artifactId>webjar-ckeditor</artifactId>
-	<version>4.19.1</version>
+	<version>4.22.1-SNAPSHOT</version>
 	<description>Web jar packaging of CKEditor packages.</description>
+
+	<!--NOTE: This is the last CKEditor version released under open source license -->
 
 	<properties>
 		<src.url>https://download.cksource.com/CKEditor/CKEditor/CKEditor%20${src.version}/ckeditor_${src.version}_</src.url>
@@ -18,6 +20,18 @@
 	
 	<build>
 		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>npm-install</id>
+						<configuration>
+							<skip>true</skip>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 			<plugin>
 				<artifactId>maven-antrun-plugin</artifactId>
 				<executions>
