@@ -16,22 +16,11 @@
 
 	<properties>
 		<src.url>https://download.cksource.com/CKEditor/CKEditor/CKEditor%20${src.version}/ckeditor_${src.version}_</src.url>
+		<npm-install.skip>true</npm-install.skip>
 	</properties>
 	
 	<build>
 		<plugins>
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>exec-maven-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>npm-install</id>
-						<configuration>
-							<skip>true</skip>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
 			<plugin>
 				<artifactId>maven-antrun-plugin</artifactId>
 				<executions>
