@@ -22,6 +22,25 @@
 	<build>
 		<plugins>
 			<plugin>
+				<groupId>org.fujion.webjars</groupId>
+				<artifactId>webjar-validator-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>validate-webjar</id>
+						<configuration>
+							<rules>
+								<rule>file_exists dist/basic/ckeditor.js</rule>
+								<rule>file_exists dist/full/ckeditor.js</rule>
+								<rule>file_exists dist/standard/ckeditor.js</rule>
+								<rule>file_exists import-map.json</rule>
+								<rule>file_exists LICENSE.md</rule>
+								<rule>file_exists README.md</rule>
+							</rules>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
 				<artifactId>maven-antrun-plugin</artifactId>
 				<executions>
 					<execution>
