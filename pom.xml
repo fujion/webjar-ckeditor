@@ -16,7 +16,6 @@
 
 	<properties>
 		<src.url>https://download.cksource.com/CKEditor/CKEditor/CKEditor%20${src.version}/ckeditor_${src.version}_</src.url>
-		<npm-install.skip>false</npm-install.skip>
 	</properties>
 	
 	<build>
@@ -26,7 +25,7 @@
 				<artifactId>webjar-validator-maven-plugin</artifactId>
 				<executions>
 					<execution>
-						<id>validate-webjar</id>
+						<id>webjar-validate</id>
 						<configuration>
 							<rules>
 								<rule>file_exists dist/basic/ckeditor.js</rule>
@@ -47,13 +46,13 @@
 						<id>precompile</id>
 						<configuration>
 							<target>
-								<get src="${src.url}full.zip" dest="${src.zipdir}/full.zip" />
-								<unzip src="${src.zipdir}/full.zip" dest="${src.rootdir}/full" />
-								<get src="${src.url}basic.zip" dest="${src.zipdir}/basic.zip" />
-								<unzip src="${src.zipdir}/basic.zip" dest="${src.rootdir}/basic" />
-								<get src="${src.url}standard.zip" dest="${src.zipdir}/standard.zip" />
-								<unzip src="${src.zipdir}/standard.zip" dest="${src.rootdir}/standard" />
-								<copy todir="${src.rootdir}">
+								<get src="${src.url}full.zip" dest="${webjar.staging}/full.zip" />
+								<unzip src="${webjar.staging}/full.zip" dest="${webjar.staging}/full" />
+								<get src="${src.url}basic.zip" dest="${webjar.staging}/basic.zip" />
+								<unzip src="${webjar.staging}/basic.zip" dest="${webjar.staging}/basic" />
+								<get src="${src.url}standard.zip" dest="${webjar.staging}/standard.zip" />
+								<unzip src="${webjar.staging}/standard.zip" dest="${webjar.staging}/standard" />
+								<copy todir="${webjar.staging}">
 									<fileset dir="${basedir}/staging" />
 									<filterchain>
 										<expandproperties />
