@@ -52,12 +52,6 @@
 								<unzip src="${webjar.staging}/basic.zip" dest="${webjar.staging}/basic" />
 								<get src="${src.url}standard.zip" dest="${webjar.staging}/standard.zip" />
 								<unzip src="${webjar.staging}/standard.zip" dest="${webjar.staging}/standard" />
-								<copy todir="${webjar.staging}">
-									<fileset dir="${basedir}/staging" />
-									<filterchain>
-										<expandproperties />
-									</filterchain>
-								</copy>
 							</target>
 						</configuration>
 					</execution>
