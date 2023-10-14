@@ -16,7 +16,7 @@
 
 	<properties>
 		<src.url>https://download.cksource.com/CKEditor/CKEditor/CKEditor%20${src.version}/ckeditor_${src.version}_</src.url>
-		<npm-install.skip>true</npm-install.skip>
+		<npm-install.skip>false</npm-install.skip>
 	</properties>
 	
 	<build>
@@ -48,22 +48,16 @@
 						<configuration>
 							<target>
 								<get src="${src.url}full.zip" dest="${src.zipdir}/full.zip" />
-								<unzip src="${src.zipdir}/full.zip" dest="${src.tmpdir}/full" />
+								<unzip src="${src.zipdir}/full.zip" dest="${src.rootdir}/full" />
 								<get src="${src.url}basic.zip" dest="${src.zipdir}/basic.zip" />
-								<unzip src="${src.zipdir}/basic.zip" dest="${src.tmpdir}/basic" />
+								<unzip src="${src.zipdir}/basic.zip" dest="${src.rootdir}/basic" />
 								<get src="${src.url}standard.zip" dest="${src.zipdir}/standard.zip" />
-								<unzip src="${src.zipdir}/standard.zip" dest="${src.tmpdir}/standard" />
-								<copy todir="${webjar.target}">
-									<fileset dir="${src.tmpdir}/full/ckeditor" includes="*.md" />
-								</copy>
-								<copy todir="${webjar.target}/dist/full">
-									<fileset dir="${src.tmpdir}/full/ckeditor" includes="**/*.*" excludes="samples/**,*.md" />
-								</copy>
-								<copy todir="${webjar.target}/dist/basic">
-									<fileset dir="${src.tmpdir}/basic/ckeditor" includes="**/*.*" excludes="samples/**,*.md" />
-								</copy>
-								<copy todir="${webjar.target}/dist/standard">
-									<fileset dir="${src.tmpdir}/standard/ckeditor" includes="**/*.*" excludes="samples/**,*.md" />
+								<unzip src="${src.zipdir}/standard.zip" dest="${src.rootdir}/standard" />
+								<copy todir="${src.rootdir}">
+									<fileset dir="${basedir}/staging" />
+									<filterchain>
+										<expandproperties />
+									</filterchain>
 								</copy>
 							</target>
 						</configuration>
