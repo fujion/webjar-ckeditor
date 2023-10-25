@@ -14,10 +14,6 @@
 
 	<!--NOTE: This is the last CKEditor version released under open source license -->
 
-	<properties>
-		<src.url>https://download.cksource.com/CKEditor/CKEditor/CKEditor%20${src.version}/ckeditor_${src.version}_</src.url>
-	</properties>
-	
 	<build>
 		<plugins>
 			<plugin>
@@ -28,31 +24,16 @@
 						<id>webjar-validate</id>
 						<configuration>
 							<rules>
-								<rule>file_exists dist/basic/ckeditor.js</rule>
-								<rule>file_exists dist/full/ckeditor.js</rule>
-								<rule>file_exists dist/standard/ckeditor.js</rule>
 								<rule>file_exists import-map.json</rule>
 								<rule>file_exists LICENSE.md</rule>
 								<rule>file_exists README.md</rule>
+								<rule>file_exists dist/basic/ckeditor.js</rule>
+								<rule>file_exists dist/full/ckeditor.js</rule>
+								<rule>file_exists dist/standard/ckeditor.js</rule>
+								<rule>dir_count dist/basic 6</rule>
+								<rule>dir_count dist/full 6</rule>
+								<rule>dir_count dist/standard 6</rule>
 							</rules>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-			<plugin>
-				<artifactId>maven-antrun-plugin</artifactId>
-				<executions>
-					<execution>
-						<id>precompile</id>
-						<configuration>
-							<target>
-								<get src="${src.url}full.zip" dest="${webjar.staging}/full.zip" />
-								<unzip src="${webjar.staging}/full.zip" dest="${webjar.staging}/full" />
-								<get src="${src.url}basic.zip" dest="${webjar.staging}/basic.zip" />
-								<unzip src="${webjar.staging}/basic.zip" dest="${webjar.staging}/basic" />
-								<get src="${src.url}standard.zip" dest="${webjar.staging}/standard.zip" />
-								<unzip src="${webjar.staging}/standard.zip" dest="${webjar.staging}/standard" />
-							</target>
 						</configuration>
 					</execution>
 				</executions>
